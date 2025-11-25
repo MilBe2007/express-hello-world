@@ -12,12 +12,40 @@ app.get('/req', (req, res) => {
     res.send('Yo!')
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-
 app.get('/meunome', (req, res) => {
   res.send('Meu nome é Mileny Beatriz Gonçalves dos Santos');
 });
 
+app.get('/tico', (req, res) => {
+  res.send('teco');
+});
+
+app.get('/pokemons', (req, res) => {
+  const pokemonsAsh = [
+    "Caterpie",
+    "Pidgeotto",
+    "Bulbasaur",
+    "Charmander",
+    "Squirtle",
+    "Krabby",
+    "Raticate",
+    "Primeape",
+    "Muk",
+    "Tauros"
+  ];
+  res.json(pokemonsAsh);
+});
+
+app.post('/series', (req, res) => {
+  const series = [
+    "Manifest: O Mistério do Voo 828",
+    "Teen Wolf",
+    "Stranger Things"
+  ];
+  res.json(series);
+});
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 const html = `
 <!DOCTYPE html>
@@ -68,4 +96,4 @@ const html = `
     </section>
   </body>
 </html>
-`
+`;
